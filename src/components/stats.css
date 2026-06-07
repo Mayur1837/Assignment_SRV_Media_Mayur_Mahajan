@@ -1,0 +1,106 @@
+/* =========================================================
+   Stats Section (BEM) — accolades with laurel wreaths
+   ========================================================= */
+.stats {
+  position: relative;
+  background: #ffffff;
+  padding: 56px 24px;
+  background-image: radial-gradient(
+    ellipse 600px 300px at 95% 0%,
+    rgba(180, 160, 220, 0.16) 0%,
+    transparent 70%
+  );
+}
+
+.stats__visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.stats__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: center;
+  justify-items: center;
+}
+
+.stats__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats__wreath {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats__wreath-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.stats__text {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #0a1e5c;
+  font-family: inherit;
+  line-height: 1.3;
+  padding: 0 22px;
+  z-index: 1;
+}
+
+.stats__line {
+  font-size: 15px;
+  font-weight: 400;
+  display: block;
+  background: linear-gradient(90deg, #010E39 0%, #0344A2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.stats__line--bold {
+  font-weight: 700;
+  font-size: 17px;
+}
+
+@media (max-width: 900px) {
+  .stats__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats { padding: 40px 12px; }
+  .stats__wreath { width: 180px; height: 180px; }
+  .stats__line { font-size: 13px; }
+  .stats__line--bold { font-size: 15px; }
+}

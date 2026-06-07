@@ -1,0 +1,104 @@
+/* =========================================================
+   Participating Schools Section (BEM)
+   ========================================================= */
+.schools {
+  background: #ffffff;
+  padding: 64px 24px;
+}
+
+.schools__inner {
+  margin: 0 auto;
+}
+
+.schools__title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a2a6c;
+  margin: 0 0 40px;
+  letter-spacing: -0.01em;
+}
+
+.schools__viewport {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+}
+
+.schools__row {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: schools-scroll 50s linear infinite;
+}
+
+.schools__row--reverse {
+  margin-top: 16px;
+  animation-direction: reverse;
+  animation-duration: 56s;
+}
+
+.schools:hover .schools__row,
+.schools:focus-within .schools__row {
+  animation-play-state: paused;
+}
+
+.schools__card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 110px;
+  border: 1px solid #ececec;
+  border-radius: 6px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  box-sizing: border-box;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.schools__card:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 2px;
+}
+
+.schools__card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.schools__logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+@keyframes schools-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .schools__row { animation: none; }
+}
+
+@media (max-width: 640px) {
+  .schools { padding: 40px 16px; }
+  .schools__title { font-size: 22px; margin-bottom: 24px; }
+  .schools__card { width: 150px; height: 88px; }
+}

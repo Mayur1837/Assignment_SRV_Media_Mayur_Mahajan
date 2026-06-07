@@ -1,0 +1,112 @@
+/* =========================================================
+   Exhibition Section (BEM)
+   ========================================================= */
+.exhibition {
+  position: relative;
+  background: linear-gradient(180deg, #2a0f5f 0%, #1a0b3d 100%);
+  padding: 72px 0 60px;
+  overflow: hidden;
+  border-bottom-left-radius: 50% 180px;
+  border-bottom-right-radius: 50% 180px;
+}
+.exhibition__inner {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.exhibition__title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 40px;
+}
+.exhibition__carousel {
+  position: relative;
+}
+.exhibition__track {
+  list-style: none;
+  margin: 0;
+  padding: 8px 4px 16px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 1fr);
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+.exhibition__track::-webkit-scrollbar { display: none; }
+.exhibition__track:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+.exhibition__card {
+  scroll-snap-align: start;
+  background: #ead4f7;
+  border-radius: 14px;
+  padding: 28px 24px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+.exhibition__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: left;
+  color: #4a1d8f;
+}
+.exhibition__card-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a0b3d;
+  line-height: 1.25;
+}
+.exhibition__card-desc {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #3b2566;
+}
+.exhibition__controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 36px;
+}
+.exhibition__btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  background: transparent;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.exhibition__btn:hover { background: rgba(255, 255, 255, 0.12); }
+.exhibition__btn:focus-visible {
+  outline: 3px solid #ffd166;
+  outline-offset: 2px;
+}
+.exhibition__btn--filled {
+  background: #ffffff;
+  color: #1a0b3d;
+}
+.exhibition__btn--filled:hover { background: #f1e6ff; }
+.exhibition__curve { display: none; }
+
+@media (max-width: 720px) {
+  .exhibition { padding: 56px 0 120px; }
+  .exhibition__title { font-size: 24px; }
+  .exhibition__track { grid-auto-columns: minmax(240px, 85%); }
+}
